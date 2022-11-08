@@ -63,17 +63,7 @@ Console.WriteLine("Le resultat est "+ result +" Miles.");
 Console.ReadLine();
 */
 
-
-
-
-
-
-
-
-
-
-
-
+// V2 : plusieurs conversions possibles
 
 string userInput;
 double userInputConvert = 0;
@@ -85,17 +75,13 @@ do
     Console.WriteLine("Veuillez entrer une valeur à convertir en kilomètres comprise entre 0.01 et 1 000 000 ou saisir q pour quitter le programme s'il vous plaît.");
     userInput = Console.ReadLine();
 
-    if (userInput.Equals(commandeDeSortie))
+    if(double.TryParse(userInput, out userInputConvert) && userInputConvert >= 0.01 && userInputConvert < 1000000)
     {
-        Environment.Exit(0);
+        result = userInputConvert / 1.609;
+        Console.WriteLine("Le resultat est " + result + " Miles.");
     }
-
-    // userInputConvert = double.Parse(userInput);
-
 }
-while (!double.TryParse(userInput, out userInputConvert) || userInputConvert < 0.01 || userInputConvert >= 1000000);
+while (!userInput.Equals(commandeDeSortie));
 
-result = userInputConvert / 1.609;
 
-Console.WriteLine("Le resultat est " + result + " Miles.");
 Console.ReadLine();
