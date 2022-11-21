@@ -1,4 +1,6 @@
-﻿int floor = 1;
+﻿Console.Title = "Toto";
+
+int floor = 1;
 int nbCard = 0;
 int remainingCards = 0;
 int cardUsed = 0;
