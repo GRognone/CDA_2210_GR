@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Algo-Serie-1\ExercicesNombres\ExercicesNombres.csproj" />
+  </ItemGroup>
+
 </Project>

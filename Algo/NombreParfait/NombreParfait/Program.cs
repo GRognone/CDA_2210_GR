@@ -36,13 +36,33 @@
              * GetUserInput(): entier
              * TrouveDiviseur(entier) : Liste<entier>
             */
+            int nombreATrouver = 0;
+            List<int> listeDiviseur;
+            int nombreParfaitATrouver = 0;
+            int sommeDiviseur;
+            int nombreCourant = 2;
+
+            Console.WriteLine("Bonjour, vous êtes sur le programme qui vous affiche une certaine quantité de nombres parfaits");
+            Console.WriteLine("Combien de nombre parfait souhaitez vous connaitre ? (réponse en dessous de 4 attendu)");
+
+            nombreATrouver = ExercicesNombres.Program.GetUserInput();
+
+            while (nombreParfaitATrouver < nombreATrouver)
+            {
+                sommeDiviseur = 1;
+                listeDiviseur = ExercicesNombres.Program.TrouveDiviseur(nombreCourant);
+                foreach (int diviseurCourant in listeDiviseur)
+                {
+                    sommeDiviseur = sommeDiviseur + diviseurCourant;
+                    //sommeDiviseur += diviseurCourant;
+                }
+                if(sommeDiviseur == nombreCourant)
+                {
+                    ++nombreParfaitATrouver;
+                    Console.WriteLine(nombreCourant + " est un nombre parfait.");
+                }
+                ++nombreCourant;
+            } 
         }
-
-        int NombreATrouver;
-        List<int> listeDiviseur;
-        int nombreParfaitATrouver;
-        int sommeDiviseur;
-        int nombreCourant;
-
     }
 }
