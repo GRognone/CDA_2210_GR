@@ -21,7 +21,7 @@
              * AFFICHAGE
              * Ecrire("Les diviseurs de input sont ", diviseurs)
             */
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -33,7 +33,9 @@
             
             inputConvert = GetUserInput();
             
-            diviseurs =TrouveDiviseur(inputConvert);
+            diviseurs = TrouveDiviseur(inputConvert);
+
+            TrouveDiviseur("23"); // utilisation de la surcharge (paramètre de type string)
 
             Console.WriteLine("Les diviseurs sont : ");
             
@@ -47,22 +49,27 @@
         /// Retourne la saisie utilisateur convertie de string en int
         /// </summary>
         /// <returns>La saisie utilisateur sous forme d'entier</returns>
-        static int GetUserInput()
+        public static int GetUserInput()
         {
             string input;
             int inputConvert;
             do
             {
+                Console.WriteLine();
                 Console.WriteLine("Saisir un nombre entier : ");
                 input = Console.ReadLine();
             } while (!int.TryParse(input, out inputConvert));
             return inputConvert;
         }
 
-
-        static List<int> TrouveDiviseur(string input)
+        /// <summary>
+        /// Retourne les diviseurs d'un nombre donné
+        /// </summary>
+        /// <param name="input">Le nombre à convertir et à évaluer</param>
+        /// <returns>La liste des diviseurs du nombre donné</returns>
+        private static List<int> TrouveDiviseur(string input)
         {
-
+            return TrouveDiviseur(Convert.ToInt32(input));
         }
 
 
@@ -70,8 +77,8 @@
         /// Retourne les diviseurs d'un nombre donné
         /// </summary>
         /// <param name="input">Le nombre à évaluer</param>
-        /// <returns></returns>
-        static List<int> TrouveDiviseur(int input)
+        /// <returns>La liste des diviseurs du nombre donné</returns>
+        public static List<int> TrouveDiviseur(int input)
         {
             input = Math.Abs(input);
             List<int> diviseurs = new List<int>();
