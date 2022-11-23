@@ -62,6 +62,27 @@
             return inputConvert;
         }
 
+        public static int GetUserInputV1_5()
+        {
+            Console.WriteLine("Saisir un nombre entier : ");
+            string input = Console.ReadLine();
+            int inputConvert;
+
+            if (int.TryParse(input, out inputConvert))
+            {
+                return inputConvert;
+            }
+
+            return GetUserInputV1_5();
+            
+        }
+
+        public static int GetUserInputV2()
+        {
+            Console.WriteLine("Saisir un nombre entier : ");
+            return (int.TryParse(Console.ReadLine(),out int input)  ? input : GetUserInputV2());
+        }
+
         /// <summary>
         /// Retourne les diviseurs d'un nombre donné
         /// </summary>

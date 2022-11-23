@@ -40,7 +40,7 @@
             List<int> listeDiviseur;
             int nombreParfaitATrouver = 0;
             int sommeDiviseur;
-            int nombreCourant = 2;
+            int nombreCourant = 1;
 
             Console.WriteLine("Bonjour, vous êtes sur le programme qui vous affiche une certaine quantité de nombres parfaits");
             Console.WriteLine("Combien de nombre parfait souhaitez vous connaitre ? (réponse en dessous de 4 attendu)");
@@ -50,7 +50,7 @@
             while (nombreParfaitATrouver < nombreATrouver)
             {
                 sommeDiviseur = 1;
-                listeDiviseur = ExercicesNombres.Program.TrouveDiviseur(nombreCourant);
+                listeDiviseur = ExercicesNombres.Program.TrouveDiviseur(++nombreCourant);
                 foreach (int diviseurCourant in listeDiviseur)
                 {
                     sommeDiviseur = sommeDiviseur + diviseurCourant;
@@ -61,7 +61,7 @@
                     ++nombreParfaitATrouver;
                     Console.WriteLine(nombreCourant + " est un nombre parfait.");
                 }
-                ++nombreCourant;
+                
             } 
         }
     }
