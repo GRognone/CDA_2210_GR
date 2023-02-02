@@ -29,16 +29,17 @@ DBCC CHECKIDENT('auteurs', RESEED, 0);
 INSERT INTO editeurs 
 (editeur_nom)
 VALUES 
-('toto'),
-('titi'),
-('tata');
+('Les éditions du plat pays'),
+('Eyrolles'),
+('Alsace Power');
 
 
 INSERT INTO auteurs 
 (auteur_prenom, auteur_nom)
 VALUES 
-('Mike', 'Devoldère'),
-('Gérard', 'Rogne');
+('Pierre', 'Kiroul'),
+('Paul', 'Hissage'),
+('Jack', 'Adit');
 
 -- INSERT INTO auteurs VALUES ('Devoldère', 'Mike');
 
@@ -46,31 +47,19 @@ VALUES
 INSERT INTO etats_livres 
 (etat_livre_nom) 
 VALUES 
-('neuf'), -- 1
+('neuf'), -- etat_livre_id = 1
 ('très bon état'),
 ('bon état'),
 ('bof'),
 ('abîmé'),
-('très abîmé'); -- 6
+('très abîmé'); -- etat_livre_id = 6
 
 
 INSERT INTO livres 
 (livre_isbn, livre_titre, livre_date_achat, etat_livre_id, editeur_id)
 VALUES 
-('472-1', 'SQL pour les nuls', '2022-01-31', 1, 1);
-
-
-
-
--- Mettre à jour un enregistrement 
-UPDATE auteurs 
-SET auteur_nom='Bouchard' 
-WHERE auteur_id = 2;
-
-UPDATE auteurs 
-SET auteur_nom='DEV', auteur_prenom='Toto'  
-WHERE auteur_id = 1;
-
-SELECT * FROM editeurs;
-SELECT * FROM auteurs;
-SELECT * FROM livres;
+('479-1', 'SQL pour les nuls', '2022-01-31', 4, 3),
+('478-2', 'Le cheval vert', '2022-05-17', 3, 1),
+('478-3', 'Les avantures de Toto', '2022-05-21', 1, 2),
+('479-4', 'Tintin chez les Développeurs', '2022-06-03', 2, 3),
+('479-5', 'A song of ice and fire', '2023-01-11', 2, 3);
