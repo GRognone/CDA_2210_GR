@@ -2,8 +2,6 @@
 
 SELECT personne_id, personne_nom, personne_prenom, role_id FROM Personnes WHERE role_id = 4;
 
-
-
 -- 2 Sélectionner tous les employés autre que le directeur.
 
 -- SELECT personne_id, personne_nom, personne_prenom, role_id FROM Personnes WHERE role_id NOT BETWEEN 1 AND 5;
@@ -17,7 +15,7 @@ SELECT personne_id, personne_nom, personne_prenom, role_id FROM Personnes WHERE 
 -- 3 Sélectionner toutes les personnes triées par rôle puis par nom.
 
 SELECT personne_id, personne_nom, personne_prenom, role_id FROM Personnes 
-ORDER BY role_id ASC, personne_nom ASC;
+ORDER BY role_id ASC, personne_nom DESC;
 
 
 
@@ -69,7 +67,7 @@ medecin_consultation,
 Residents.personne_id,
 personne_nom, 
 personne_prenom
-FROM Residents RIGHT JOIN Personnes ON Personnes.personne_id = Residents.personne_id;
+FROM Residents JOIN Personnes ON Personnes.personne_id = Residents.personne_id;
 
 SELECT 
 resident_id, 

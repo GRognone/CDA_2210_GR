@@ -75,3 +75,4 @@ VALUES
 SELECT * FROM Roles;
 SELECT * FROM Personnes;
 SELECT * FROM etats;
+SELECT * FROM Residents;
