@@ -1,5 +1,6 @@
 -- use hebergement;
 
+DROP TABLE IF EXISTS Personnes_Activites;
 DROP TABLE IF EXISTS Activites;
 DROP TABLE IF EXISTS Type_Activites;
 DROP TABLE IF EXISTS Residents;
@@ -76,6 +77,15 @@ CREATE TABLE Residents_Activites
 	activite_id INT,
 	PRIMARY KEY (resident_id, activite_id)
 );
+
+CREATE TABLE Personnes_Activites(
+   personne_id INT,
+   activite_id INT,
+   PRIMARY KEY(personne_id, activite_id),
+   FOREIGN KEY(personne_id) REFERENCES Personnes(personne_id),
+   FOREIGN KEY(activite_id) REFERENCES Activites(activite_id)
+);
+
 
 -- ALTER TABLE Residents_Activites 
 -- 	ADD PRIMARY KEY (resident_id, activite_id);
