@@ -37,11 +37,17 @@
           <AssociatedConnUserName>hebergement</AssociatedConnUserName>
           <FullPath>02 - Hebergement - DML - insert.sql</FullPath>
         </FileNode>
-        <FileNode Name="03 - Hebergement - DQL - select-personnes.sql">
+        <FileNode Name="03 - Hebergement - DQL - V1.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-P24I4CG\LOCALHOST:False:hebergement</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-P24I4CG\LOCALHOST</AssociatedConnSrvName>
           <AssociatedConnUserName>hebergement</AssociatedConnUserName>
-          <FullPath>03 - Hebergement - DQL - select-personnes.sql</FullPath>
+          <FullPath>03 - Hebergement - DQL - V1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="exemples - Hebergement - DQL - select-personnes.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-P24I4CG\LOCALHOST:False:hebergement</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-P24I4CG\LOCALHOST</AssociatedConnSrvName>
+          <AssociatedConnUserName>hebergement</AssociatedConnUserName>
+          <FullPath>exemples - Hebergement - DQL - select-personnes.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
