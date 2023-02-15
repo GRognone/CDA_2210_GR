@@ -17,7 +17,7 @@ CREATE TABLE countries
 CREATE TABLE cities 
 (
 	city_id INT IDENTITY,
-	city_name VARCHAR(100),
+	city_name VARCHAR(100) NOT NULL,
 	country_code CHAR(2) NOT NULL,
 	PRIMARY KEY (city_id)
 );
