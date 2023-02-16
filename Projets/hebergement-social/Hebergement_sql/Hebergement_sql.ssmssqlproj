@@ -1,8 +1,20 @@
 <?xml version="1.0"?>
 <SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Hebergement_sql">
   <Items>
-    <LogicalFolder Name="Connexions" Type="2" Sorted="true">
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
+        <ConnectionNode Name="CRM-UC-3928\SQLEXPRESS:Hebergement">
+          <Created>2023-02-15T08:17:48.8351355+01:00</Created>
+          <Type>SQL</Type>
+          <Server>CRM-UC-3928\SQLEXPRESS</Server>
+          <UserName>Hebergement</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
         <ConnectionNode Name="DESKTOP-P24I4CG\LOCALHOST:hebergement">
           <Created>2023-02-13T12:54:55.2757288+01:00</Created>
           <Type>SQL</Type>
@@ -17,41 +29,41 @@
         </ConnectionNode>
       </Items>
     </LogicalFolder>
-    <LogicalFolder Name="Requêtes" Type="0" Sorted="true">
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="00 - create-database.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CRM-UC-3928\SQLEXPRESS:False:Hebergement</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CRM-UC-3928\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>Hebergement</AssociatedConnUserName>
           <FullPath>00 - create-database.sql</FullPath>
         </FileNode>
         <FileNode Name="01 - Hebergement - DDL - create-alter-drop.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-P24I4CG\LOCALHOST:False:hebergement</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-P24I4CG\LOCALHOST</AssociatedConnSrvName>
-          <AssociatedConnUserName>hebergement</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CRM-UC-3928\SQLEXPRESS:False:Hebergement</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CRM-UC-3928\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>Hebergement</AssociatedConnUserName>
           <FullPath>01 - Hebergement - DDL - create-alter-drop.sql</FullPath>
         </FileNode>
         <FileNode Name="02 - Hebergement - DML - insert.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-P24I4CG\LOCALHOST:False:hebergement</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-P24I4CG\LOCALHOST</AssociatedConnSrvName>
-          <AssociatedConnUserName>hebergement</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CRM-UC-3928\SQLEXPRESS:False:Hebergement</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CRM-UC-3928\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>Hebergement</AssociatedConnUserName>
           <FullPath>02 - Hebergement - DML - insert.sql</FullPath>
         </FileNode>
         <FileNode Name="03 - Hebergement - DQL - V1.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-P24I4CG\LOCALHOST:False:hebergement</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-P24I4CG\LOCALHOST</AssociatedConnSrvName>
-          <AssociatedConnUserName>hebergement</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CRM-UC-3928\SQLEXPRESS:False:Hebergement</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CRM-UC-3928\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>Hebergement</AssociatedConnUserName>
           <FullPath>03 - Hebergement - DQL - V1.sql</FullPath>
         </FileNode>
         <FileNode Name="exemples - Hebergement - DQL - select-personnes.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-P24I4CG\LOCALHOST:False:hebergement</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-P24I4CG\LOCALHOST</AssociatedConnSrvName>
-          <AssociatedConnUserName>hebergement</AssociatedConnUserName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:CRM-UC-3928\SQLEXPRESS:False:Hebergement</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>CRM-UC-3928\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>Hebergement</AssociatedConnUserName>
           <FullPath>exemples - Hebergement - DQL - select-personnes.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
-    <LogicalFolder Name="Divers" Type="3" Sorted="true">
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
       <Items />
     </LogicalFolder>
   </Items>

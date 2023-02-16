@@ -49,7 +49,7 @@ ORDER BY personne_nom DESC;
 SELECT * FROM Personnes, Roles 
 ORDER BY personne_id;
 
--- Séléctionne lepersonnes en joignant les informations de leurs rôles respecteifs
+-- Séléctionne les personnes en joignant les informations de leurs rôles respecteifs
 SELECT * FROM Personnes 
 INNER JOIN Roles ON Personnes.role_id = Roles.role_id
 WHERE personne_id = 4;

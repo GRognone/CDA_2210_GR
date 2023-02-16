@@ -88,8 +88,41 @@ FROM Personnes JOIN Residents ON Personnes.personne_id = Residents.personne_id;
 
 -- 5 Sélectionner tous les résidents actifs du plus jeune au plus âgé.
 
+SELECT
+resident_id, 
+Residents.personne_id,
+personne_nom,
+personne_prenom,
+personne_ddn
+FROM Personnes Join Residents ON Personnes.personne_id = Residents.personne_id
+ORDER BY personne_ddn DESC
 
 -- 6 Sélectionner tous les résidents suivis par un médecin avec nom et prénom du médecin attitré.
 
+SELECT
+resident_id,
+R1.personne_id,
+P1.personne_nom,
+P1.personne_prenom,
+medecin_id, 
+P2.personne_id,
+P2.personne_nom,
+p2.personne_prenom,
+medecin_consultation 
+FROM Personnes as P1 -- P1 = PERSONNE RESIDENT
+JOIN Residents R1 ON P1.personne_id = R1.personne_id -- R1 = RESIDENT
+JOIN Personnes P2 ON R1.medecin_id = P2.personne_id; -- P2 = PERSONNE MEDECIN
 
 -- 7 Sélectionner tous les médecins avec le nombre de résidents qu’il suivent.
+
+SELECT
+Personnes.personne_id,
+personne_nom,
+personne_prenom,
+medecin_id,
+resident_id
+
+FROM Personnes as P1 -- P1 = MEDECIN
+JOIN Residents ON Residents.medecin_id
+
+
