@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CerealsApi.Models
 {
     [Table("tbl_cereals")]
-    public class Cereal
+    public class Cereal : Model
     {
-        [Key]
-        public int CerealId { get; set; }
+        public int CerealId { get => base.Id; }
 
         [Required]
         // [Column("nom_de_la_colonne_en_base_de_donnees")]
@@ -18,5 +17,13 @@ namespace CerealsApi.Models
 
         [Required]
         public int Protein { get; set; }
+
+        public override bool UpdateFromModel(Model toUpdate)
+        {
+            Cereal cereal = (Cereal)toUpdate;
+            this.Name = cereal.Name;
+            return true;
+        }
+
     }
 }
