@@ -18,10 +18,17 @@ namespace CerealsApi.Models
         [Required]
         public int Protein { get; set; }
 
+        /// <summary>
+        /// Met à jour l'objet actuel à partir d'un autre objet du même type.
+        /// </summary>
+        /// <param name="toUpdate">L'objet contenant les données mises à jour</param>
+        /// <returns>True si la mise à jour a réussi. False sinon.</returns>
         public override bool UpdateFromModel(Model toUpdate)
         {
             Cereal cereal = (Cereal)toUpdate;
             this.Name = cereal.Name;
+            this.Calories = cereal.Calories;
+            this.Protein = cereal.Protein;
             return true;
         }
 

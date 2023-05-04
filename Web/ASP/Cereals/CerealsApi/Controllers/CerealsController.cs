@@ -10,40 +10,25 @@ namespace CerealsApi.Controllers
     [ApiController]
     public class CerealsController : ControllerBase 
     {
-        CerealsDbContext context;
-
-        Repository<Model> repository;
+        Repository<Cereal> repository;
 
         public CerealsController() : base()
         {
-            context = new(); // ou new CerealsDbContext();
-
-            repository = new Repository<Model>(context);
-            repository.Get();
+            repository = new Repository<Cereal>(new CerealsDbContext());
         }
 
         // GET: api/<CerealsController>
         [HttpGet]
         public IEnumerable<Cereal> Get()
         {
-            return (IEnumerable<Cereal>) repository.Get();
+            return repository.Get();
         }
 
         // GET api/<CerealsController>/5
         [HttpGet("{id}")]
         public Cereal? Get(int id)
         {
-            /*foreach(Cereal c in context.Cereals)
-            {
-                if(c.CerealId == id)
-                {
-                    return c;
-                }
-            }
-            return null;*/
-
-            return context.Cereals.FirstOrDefault(c => c.CerealId == id);
-
+            return repository.Get(id);
         }
         //public Cereal Get(int id) => context.Cereals.Single(c => c.CerealId == id);
 
@@ -51,33 +36,22 @@ namespace CerealsApi.Controllers
         [HttpPost]
         public void Post([FromBody] Cereal value)
         {
-            context.Cereals.Add(value);
-            context.SaveChanges();
+            repository.Add(value);
         }
 
         // PUT api/<CerealsController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Cereal value)
         {
-            if (this.Get(id) is Cereal cereal && value.CerealId == cereal.CerealId)
-            {
-                cereal.Name = value.Name;
-                cereal.Calories = value.Calories;
-                cereal.Protein = value.Protein;
-                // context.Cereals.Update(cereal);
-                context.SaveChanges();
-            }
+            value.Id = id;
+            repository.Update(value);
         }
 
         // DELETE api/<CerealsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            if (this.Get(id) is Cereal cereal)
-            {
-                context.Cereals.Remove(cereal);
-                context.SaveChanges();
-            }
+            repository.Delete(id);
         }
     }
 }
