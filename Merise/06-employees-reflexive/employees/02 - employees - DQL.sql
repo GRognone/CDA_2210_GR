@@ -92,3 +92,56 @@ MAN1.emp_id
 order by
 salary_average desc;
 
+INSERT INTO employees
+(emp_manager_id,emp_lastname,emp_firstname,emp_salary,emp_hiredate)
+VALUES
+(NULL,'Toto', 'Johnny', 100000, '2010-01-09');
+
+-- johnny
+SELECT DISTINCT 
+D.emp_id , D.emp_lastname,  D.emp_firstname, D.emp_salary, 
+COUNT(E.emp_id) AS 'Number of Employees',
+SUM(E.emp_salary) AS 'Total Salary',
+AVG(E.emp_salary) AS 'Average Salary' 
+FROM employees AS D , 
+employees AS E
+WHERE D.emp_manager_id IS NULL 
+AND E.emp_manager_id IS NOT NULL
+GROUP BY D.emp_id , D.emp_lastname,  D.emp_firstname, D.emp_salary
+
+-- rodolphe V1
+SELECT 
+boss.emp_id,boss.emp_firstname,boss.emp_lastname,boss.emp_salary,boss.emp_hiredate,
+COUNT(employees.emp_id) as 'Nomber of employees',
+SUM(employees.emp_salary) as 'Total salary',
+AVG(employees.emp_salary) as 'Average salary' 
+FROM employees AS boss
+INNER JOIN employees ON employees.emp_id <> boss.emp_id AND employees.emp_manager_id IS NOT NULL
+WHERE boss.emp_manager_id IS NULL  
+GROUP BY boss.emp_id,boss.emp_firstname,boss.emp_lastname,boss.emp_salary,boss.emp_hiredate;
+
+-- Rodolphe V2
+SELECT 
+boss.emp_id,boss.emp_firstname,boss.emp_lastname,boss.emp_salary,boss.emp_hiredate,
+COUNT(employees.emp_id) as 'Number of employees',
+SUM(employees.emp_salary) as 'Total salary',
+AVG(employees.emp_salary) as 'Average salary'FROM employees AS boss
+INNER JOIN employees ON employees.emp_id <> boss.emp_id AND employees.emp_manager_id IS NOT NULL 
+WHERE boss.emp_manager_id IS NULL 
+GROUP BY boss.emp_id,boss.emp_firstname,boss.emp_lastname,boss.emp_salary,boss.emp_hiredate;
+
+-- gerard
+
+SELECT
+Boss.emp_id 'Employee Id',
+Boss.emp_lastname AS 'Lastname',
+Boss.emp_firstname AS 'Firstname',
+Boss.emp_salary AS 'Salary',
+Boss.emp_hiredate AS 'Hiredate',
+COUNT(All_emp.emp_id) AS 'Number of Employees',
+SUM (All_emp.emp_salary) AS 'Total Salary',
+AVG(All_emp.emp_salary) AS 'Average Salary'
+FROM employees AS Boss 
+JOIN employees AS All_emp ON Boss.emp_id <> All_emp.emp_id
+WHERE Boss.emp_manager_id IS NULL AND All_emp.emp_manager_id IS NOT NULL
+GROUP BY Boss.emp_id, Boss.emp_lastname,Boss.emp_firstname, Boss.emp_salary, Boss.emp_hiredate 

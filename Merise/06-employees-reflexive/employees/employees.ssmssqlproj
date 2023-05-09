@@ -31,6 +31,12 @@
           <AssociatedConnUserName>employees</AssociatedConnUserName>
           <FullPath>02 - employees - DQL.sql</FullPath>
         </FileNode>
+        <FileNode Name="99 - tests injections.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-P24I4CG\LOCALHOST:False:employees</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-P24I4CG\LOCALHOST</AssociatedConnSrvName>
+          <AssociatedConnUserName>employees</AssociatedConnUserName>
+          <FullPath>99 - tests injections.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Divers" Type="3" Sorted="true">
